@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="imagetoolbar" content="false" />
+    
+        <!-- Title -->
+        <title>
+            {Title} {block:SearchPage}- {lang:Search results for SearchQuery}{/block:SearchPage}{block:PostSummary}- {PostSummary}{/block:PostSummary}{block:IndexPage}- {Description}{/block:IndexPage}
+        </title>
+        
+        <!-- Description -->
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <!-- Fav and touch icons -->
+        <link rel="shortcut icon" href="{Favicon}" />
+        <link rel="apple-touch-icon" href="{PortraitURL-128}" />
+        
+        <!-- Google Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
+        
+        <!-- Meta -->
+        <meta name="color:Sidebar Colour" content="#ffffff" />
+        <meta name="image:Logo 140x140" content="http://static.tumblr.com/morei1o/Yncmfahl5/logo140x140.png" />
+        <meta name="image:Logo 200x200" content="http://static.tumblr.com/morei1o/RCimfakxl/logo200x200.png" />
+        <meta name="color:Blog Name Colour" content="#282828" />
+        <meta name="color:Description Colour" content="#282828" />
+        <meta name="color:Highlight Colour" content="#ff6633" />
+        <meta name="color:Navigation Colour" content="#7f7f7f" />
+        <meta name="color:Text Colour" content="#282828" />
+        <meta name="color:Date Colour" content="#7f7f7f" />
+        <meta name="color:Post Title Colour" content="#282828" />
+        <meta name="text:Google Analytics ID" content="" />
+        
+        <!-- CSS -->
+        <style type="text/css">
+        
+            /* General Settings */
+            body {
+                font-family: "PT Sans", sans-serif;
+                font-weight: 400;
+                -webkit-text-size-adjust: 100%;
+      		-ms-text-size-adjust: 100%;
+                -webkit-font-smoothing: antialiased;
+                margin: 0 0 0 0;
+            }
+        
+            /* Sidebar */
+            #sidebar {
+                width: 300px;
+                min-height: 100%;
+                position: fixed;
+                overflow: hidden;
+                z-index: -1:
+                background-color: {color:Sidebar Colour};
+            }
+            #sidebar .logo .img {
+                width: 140px;
+                height: 140px;
+                display: block;
+                margin-top: 30px;
+                margin-left: 40px;
+                background-image: url("{image:Logo 140x140}");
+                background-repeat: no-repeat;
+        		    background-color:transparent;
+    			      background-position:center center;
+            }
+            #sidebar .logo h1 {
+                text-transform: uppercase;
+                font-family: "Oswald", sans-serif;
+                font-size: 28px;
+                margin-left: 40px;
+                margin-right: 30px;
+                color: {color:Blog Name Colour};
+            }
+            #sidebar .logo a {
+                text-decoration: none;
+            }
+            #sidebar .description {
+                font-size: 16px;
+                line-height: 24px;
+                margin-left: 40px;
+                margin-right: 30px;
+                color: {color:Description Colour};
+            }
+            #sidebar .description a, #sidebar .description a:visited {
+                text-decoration: none;
+                font-weight: 600;
+                color: {color:Highlight Colour};
+            }
+            #sidebar .description a:hover {
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                color: #fff;
+                background-color: {color:Highlight Colour};
+            }
+            #sidebar .navigation {
+                display: block;
+                clear:both;
+                width: 75%;
+                margin-top: 10px;
+            }
+            #sidebar .navigation a {
+                display: inline-block;
+                text-decoration: none;
+                border: 3px solid;
+                border-radius: 30px;
+                border-color: #efefef;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 14px;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 12px;
+                margin-left: 30px;
+                webkit-border-radius: 30px;
+                moz-border-radius: 30px;
+                color: {color:Navigation Colour};
+            }
+            #sidebar .navigation a:hover {
+                -webkit-transition: all 0.25s ease;
+                -moz-transition: all 0.25s ease;
+                -ms-transition: all 0.25s ease;
+                -o-transition: all 0.25s ease;
+                transition: all 0.25s ease;
+                color: {color:Highlight Colour};
+                border-color: {color:Highlight Colour};
+            }   
+
+            /* Main Content */
+            #main {
+                margin-left: 300px;
+                background-color: #fff;
+                border-left: 1px solid #e3e3e3;
+                min-height: 900px;
+            }
+            
+            /* Date */
+            #date {
+                padding-top: 40px;
+                border-top: 1px solid #e3e3e3;
+            }
+            #date a, #date a:visited {
+                font-size: 14px;
+                font-weight: 600;
+                margin-left: 40px;
+                text-decoration: none;
+                color: {color:Date Colour};
+            }
+            #date a:hover {
+                -webkit-transition: all 0.25s ease;
+                -moz-transition: all 0.25s ease;
+                -ms-transition: all 0.25s ease;
+                -o-transition: all 0.25s ease;
+                transition: all 0.25s ease;
+                color: {color:Highlight Colour};
+            }
+            
+            /* Post */
+            #post {
+                margin-left: 40px;
+                margin-right: 40px;
+                max-width: 700px;
+                padding-bottom: 50px;
+            }
+            #post a {
+                text-decoration: none;
+            }
+            #post .text {
+                font-size: 16px;
+                line-height: 24px;
+                color: {color:Text Colour};
+            }
+            #post .text h3 {
+                margin-top: 40px;
+            }
+            #post .text img {
+                width: 100%;
+                url("{PhotoURL-HighRes}");
+                padding-top: 10px;
+            }
+            #post .text a, #post .text a:visited {
+                text-decoration: none;
+                font-weight: bold;
+                color: {color:Highlight Colour};
+            }
+            #post .text a:hover {
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                color: #fff;
+                background-color: {color:Highlight Colour};  
+            }
+            #post .text ul, #post .text ol {
+                margin-left: 0;
+                margin-bottom: 20px;
+                padding-left: 7%;
+            }
+            #post .text ul {
+                display: block;
+                list-style-type: line;
+            }
+            #post .text ol {
+                display: block;
+                list-style: decimal;
+            }
+            #post .text li {
+                line-height: 24px;
+                margin-top: 10px;
+                color: {color:Text Colour};
+            }
+            #post blockquote {
+                margin: 0;
+                padding-left: 7%;
+                border-left: solid 4px {color:Highlight Colour};
+            }
+            #post .title {
+                font-family: "Oswald", sans-serif;
+                font-size: 24px;
+                padding-top: 10px;
+                font-weight: 400;
+                color: {color:Post Title Colour};
+            }
+            #post .title a {
+                text-decoration: none;
+                color: {color:Post Title Colour};
+            }
+            #post .quote {
+                font-family: "Oswald", sans-serif;
+                font-size: 24px;
+                font-weight: 400;
+                padding-top: 10px;
+                color: {color:Post Title Colour};
+            }
+            #post img {
+                padding-top: 20px;
+                width: 100%;
+            }
+            #post .photoset {
+                padding-top: 20px;
+                width: 100%;
+            }
+            #post .video {
+                width: 100%;
+            }
+            #post .audio {
+                padding-top: 20px;
+            }
+            #post .audiocaption {
+                font-size: 14px;
+                color: {color:Text Colour};
+            }
+
+            /* Responsive videos */
+            .video {
+                position: relative;
+                padding-bottom: 56.25%; /* 16/9 ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            .video iframe,
+            .video object,
+            .video embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            /* Responsive media */
+            .embed-container {
+                position: relative;
+                padding-bottom: 56.25%; /* 16/9 ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            .embed-container iframe,
+            .embed-container object,
+            .embed-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            /* Post Footer */
+            #postfooter {
+                border-top: 1px solid #e3e3e3;
+                padding-top: 40px;
+                padding-bottom: 100px;
+            }
+            #postfooter a, #postfooter a:visited {
+                float: left;
+                margin-left: 40px;
+                text-decoration: none;
+                border: 3px solid;
+                border-radius: 30px;
+                font-weight: 600;
+                moz-border-radius: 30px;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-transform: uppercase;
+                webkit-border-radius: 30px;
+                border-color: {color:Highlight Colour};
+                color: {color:Highlight Colour};
+            }
+            #postfooter a:hover {
+                -webkit-transition: all 0.25s ease;
+                -moz-transition: all 0.25s ease;
+                -ms-transition: all 0.25s ease;
+                -o-transition: all 0.25s ease;
+                transition: all 0.25s ease;
+                border-color: {color:Post Title Colour};
+                color: {color:Post Title Colour};
+            }
+            
+            /* Pagination */
+            #pagination {
+                border-top: 1px solid #e3e3e3;
+                padding-top: 40px;
+                padding-bottom: 100px;
+            }
+            #pagination .next {
+                display: block;
+                float: right;
+                margin-right: 40px;
+            }
+            #pagination .prev {
+                display: block;
+                float: left;
+                margin-left: 40px;
+            }
+            #pagination .prev a, #pagination .prev a:visited, #pagination .next a, #pagination .next a:visited {
+                text-decoration: none;
+                border: 3px solid;
+                border-radius: 30px;
+                font-weight: 600;
+                moz-border-radius: 30px;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-transform: uppercase;
+                webkit-border-radius: 30px;
+                border-color: {color:Highlight Colour};
+                color: {color:Highlight Colour};
+            }
+            #pagination .prev a:hover, #pagination .next a:hover {
+                -webkit-transition: all 0.25s ease;
+                -moz-transition: all 0.25s ease;
+                -ms-transition: all 0.25s ease;
+                -o-transition: all 0.25s ease;
+                transition: all 0.25s ease;
+                border-color: {color:Post Title Colour};
+                color: {color:Post Title Colour};
+            }
+            
+            
+            /* Start of Media Queries */
+            
+            /* Desktops and laptops ----------- */
+            @media only screen and (min-width: 1224px) {
+            
+                #sidebar {
+                    width: 400px;
+                }
+                #sidebar .logo .img {
+                	width: 200px;
+                	height: 200px;
+                	margin-left: 50px;
+                	background-image: url("{image:Logo 200x200}");
+                }
+                #sidebar .logo h1 {
+                	font-size: 30px;
+                	margin-left: 50px;
+                    margin-right: 40px;
+                }
+                #sidebar .description {
+                	font-size: 18px;
+                	line-height: 26px;
+                	margin-left: 50px;
+                    margin-right: 40px;
+                }
+                #sidebar .navigation a {
+                	font-size: 18px;
+                	margin-top: 16px;
+                	margin-left: 38px;
+                    padding: 12px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    border: 4px solid;
+                    border-color: #efefef;
+                }
+                
+                #main {
+                	margin-left: 400px;
+                }
+                
+                #date {
+                    padding-top: 50px;
+                }
+                #date a, #date a:visited {
+                	font-size: 16px;
+                	margin-left: 50px;
+                }
+                
+                #post {
+                	margin-left: 50px;
+                	margin-right: 50px;
+                	max-width: 900px;
+                }
+                #post .text {
+                	font-size: 18px;
+                	line-height: 26px;
+                }
+                #post .title {
+                	font-size: 26px;
+                }
+                #post .quote {
+                	font-size: 26px;
+                }
+                #post .audiocaption {
+                	font-size: 16px;
+                }
+                
+                #postfooter a, #postfooter a:visited {
+                	margin-left: 50px;
+                }
+                
+                #pagination .next {
+                	margin-right: 50px;
+                }
+                #pagination .prev {
+                	margin-left: 50px;
+                }
+            
+            }
+            
+            
+            /* Tablet and Smartphones ----------- */
+            @media only screen and (max-width: 768px) {
+
+                #sidebar {
+                    display: block;
+                	height: auto;
+                	margin: 0;
+                	padding: 0;
+                    padding-bottom: 40px;
+                	position: relative;
+                	text-align: center;
+                	width: auto;
+                }
+                #sidebar .logo .img {
+                	margin-left: 0px;
+                    margin: 20px auto;
+                }
+                #sidebar .logo h1 {
+                	margin-left: 6%;
+                	margin-right: 6%;
+                }
+                #sidebar .description {
+                	margin-left: 6%;
+                	margin-right: 6%;
+                }
+                #sidebar .navigation {
+                	display: inline-block;
+                    width: 100%;
+                }
+                #sidebar .navigation a {
+                	margin-left: 2px;
+                    margin-right: 2px;
+                }
+                
+                #main {
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    border-left: none;
+                    min-height: auto;
+                }
+
+                #date a, #date a:visited {
+                    margin-left: 6%;
+                }
+                
+                #post {
+                	margin-left: 6%;
+                    margin-right: 6%;
+                    max-width: 768px;
+                }
+                
+                #postfooter a, #postfooter a:visited {
+                	margin-left: 6%;
+                }
+                
+                #pagination .next {
+                	margin-right: 6%;
+                }
+                #pagination .prev {
+                	margin-left: 6%;
+                }
+            }
+            
+            /* iPads (landscape) ----------- */
+            @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+                
+                #sidebar {
+                    position: absolute;
+                }
+            }
+            
+        </style>
+        
+        <!-- Custom CSS -->
+        <style>
+            {CustomCSS}
+        </style>
+        
+    </head>
+
+    <body>
+    
+        <!-- Sidebar -->
+        <div id="sidebar">
+            
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/" title="{Title}">
+                    <span class="img"></span>
+                </a>
+                <a href="/" title="{Title}">
+                    <h1>{Title}</h1>
+			    </a>
+            </div>
+            
+            <!-- Description -->
+            <div class="description">
+                {Description}
+            </div>
+            
+            <!-- Navigation -->
+            <div class="navigation">
+                {block:HasPages}{block:Pages}<a href="{url}">{Label}</a>{/block:Pages}{/block:HasPages}
+                {block:AskEnabled}<a href="/ask">{AskLabel}</a>{/block:AskEnabled}
+                {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div id="main">
+        
+        {block:Posts}
+                
+            {block:Photo}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    {LinkOpenTag}
+                        <img src="{PhotoURL-HighRes}" />
+                    {LinkCloseTag}
+                    {block:Caption}
+                        <div class="text">{Caption}</div>
+                    {/block:Caption}
+                </div>    
+            {/block:Photo}
+
+            {block:Photoset}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <div class="photoset">{Photoset-HighRes}</div>
+                    {block:Caption}
+                        <div class="text">{Caption}</div>
+                    {/block:Caption}
+                </div>
+            {/block:Photoset}
+
+            {block:Video}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <p>
+                        <div class="video">{Video-700}</div>
+                    </p>
+                    {block:Caption}
+                        <div class="text">{Caption}</div>
+                    {/block:Caption}
+                </div>
+            {/block:Video}
+
+            {block:Audio}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <div class="audio">
+                        {AudioPlayerBlack}
+                    </div>
+                    <div class="audiocaption">{PlayCountWithLabel}</div>
+                    {block:Caption}
+                        <div class="text">{Caption}</div>
+                    {/block:Caption}
+                </div>    
+            {/block:Audio}
+
+            {block:Quote}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <a href="{Permalink}">
+                        <div class="quote">“{Quote}”</div>
+                    </a>
+                    {block:Source}
+                        <div class="text"><br>{Source}</div>
+                    {/block:Source}
+                </div>            
+            {/block:Quote}
+                    
+            {block:Text}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <a href="{Permalink}">
+                        {block:Title}
+                            <div class="title">{Title}</div>
+                        {/block:Title}
+                    </a>
+                    <div class="text">{Body}</div>
+                </div>
+            {/block:Text}
+                    
+            {block:Answer}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <a href="{Permalink}">
+                        <div class="title">{Question}</div>
+                    </a>
+                    <div class="text">{Asker}</div>
+                    <div class="text">{Answer}</div>
+                </div>
+            {/block:Answer}
+            
+            {block:Chat}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <a href="{Permalink}">
+                        {block:Title}
+                            <div class="title">{Title}</div>
+                        {/block:Title}
+                    </a>
+                    <div class="text">
+                        <p>
+                        {block:Lines}
+                            {block:Label}
+                                <strong>{Label}</strong>
+                            {/block:Label}
+                            {Line}<br />
+                        {/block:Lines}
+                        </p>
+                    </div>
+                </div>
+            {/block:Chat}
+             
+            {block:Link}
+                <div id="date">
+                    <a href="{Permalink}">
+                        {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
+                    </a>
+                </div>
+                <div id="post">
+                    <div class="title"><a href="{URL}">{Name}</a></div>
+                    {block:Description}
+                        <div class="text">{Description}</div>
+                    {/block:Description}
+                </div>
+            {/block:Link}
+            
+            <!-- Post Footer -->
+            {block:PermalinkPage}
+            <div id="postfooter">
+                <a href="/" title="{Title}">&larr; Read More</a>
+            </div>{/block:PermalinkPage}
+
+        {/block:Posts}
+            
+        <!-- Pagination -->
+        {block:Pagination}
+            <div id="pagination">
+                {block:PreviousPage}<div class="prev"><a href="{PreviousPage}">&larr; Newer</a></div>{/block:PreviousPage}
+                {block:NextPage}<div class ="next"><a href="{NextPage}">Older &rarr;</a></div>{/block:NextPage}
+            </div>
+        {/block:Pagination}
+        
+        </div>
+        
+    </body>
+    
+    <!-- If Google Analytics ID -->
+    {block:IfGoogleAnalyticsID}
+    <script>
+        var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	{/block:IfGoogleAnalyticsID}
+
+</html>
