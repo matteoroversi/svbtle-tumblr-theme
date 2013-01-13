@@ -4,7 +4,7 @@ svbtle-tumblr-theme
 Svbtle Theme is a responsive Tumblr theme inspired by Svbtle, the invite-only publishing network.
 You can see a preview here: http://svbtletheme.tumblr.com
 
-<a href="http://svbtletheme.tumblr.com"><img src="https://dl.dropbox.com/u/2930775/matteoroversi.com/work/12.12.21_svbtle_theme.jpg"></a>
+<a href="http://svbtletheme.tumblr.com"><img src="https://dl.dropbox.com/u/2930775/matteoroversi.com/img/12.12.21_svbtle_theme.jpg"></a>
 
 <h2>Main features (version 1.0 - 23/12/2012)</h2>
 <ul>
