@@ -1,10 +1,19 @@
 svbtle-tumblr-theme
 ===================
 
-Svbtle Theme is a responsive Tumblr theme inspired by Svbtle, the invite-only publishing network.
-You can see a preview here: http://svbtletheme.tumblr.com
+<p>Svbtle Theme is a responsive Tumblr theme inspired by Svbtle, the invite-only publishing network.
+You can see a preview here: http://svbtletheme.tumblr.com</p>
+<p>Full documentation here: http://svbtletheme.tumblr.com/documentation</p>
 
 <a href="http://svbtletheme.tumblr.com"><img src="https://dl.dropbox.com/u/2930775/matteoroversi.com/img/12.12.21_svbtle_theme.jpg"></a>
+
+<h2>What’s new in version 1.1 (15/01/2013)</h2>
+<ul>
+<li>Disqus comments</li>
+<li>Facebook likes and Twitter shares</li>
+<li>Support for retina display</li>
+<li>Socialico font for social links</li>
+</ul>
 
 <h2>Main features (version 1.0 - 23/12/2012)</h2>
 <ul>
@@ -16,11 +25,3 @@ You can see a preview here: http://svbtletheme.tumblr.com
 <li>Custom colors: sidebar, blog name, description, date, links, navigation, text</li>
 <li>Google Analytics ID</li>
 </ul>
-
-<h2>What’s planned for version 1.1</h2>
-<ul>
-<li>Tags</li>
-<li>Notes</li>
-<li>Reblogs</li>
-<li>Disqus comments</li>
-<li>Facebook likes and Twitter shares</li>
