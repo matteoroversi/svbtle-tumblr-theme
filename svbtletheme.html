@@ -44,6 +44,29 @@
         <!-- Facebook Open Graph -->
         <meta property="og:site_name" content="{Title}"/>
         
+        <!-- For Syntax Highlighting -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>  
+        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>  
+        <script>
+            function styleCode() {
+                if (typeof disableStyleCode != 'undefined') { return; }
+        
+                var a = false;
+                
+                $('code').each(function() {
+                    if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
+                        $(this).addClass('prettyprint');
+                        a = true;
+                    }
+                });
+        
+                if (a) { prettyPrint(); } 
+            }
+    
+            $(function() {styleCode();});
+        </script>
+        
         {block:PermalinkPage}
             <meta property="og:url" content="{Permalink}"/>
             <meta property="og:type" content="article"/>
