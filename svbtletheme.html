@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xml:lang="en" lang="en">
-    
+
+<!-- Svbtle Theme for Tumblr by matteoroversi.com -->
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -24,7 +26,7 @@
         <!-- Custom Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css" />
         <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
-        <link href="http://static.tumblr.com/morei1o/14Amgo432/fonts.css" rel="stylesheet" type="text/css" />
+        <link href='http://static.tumblr.com/dbek3sy/VtLmbsu90/socialico.css' rel='stylesheet' type='text/css'>
         
         <!-- Meta -->
         <meta name="color:Sidebar Colour" content="#ffffff" />
@@ -40,9 +42,6 @@
         <meta name="text:Google Analytics ID" content="" />
         <meta name="text:Disqus Shortname" content="" />
         <meta name="if:Enable Comment Count" content="1" />
-        
-        <!-- Facebook Open Graph -->
-        <meta property="og:site_name" content="{Title}"/>
         
         <!-- For Syntax Highlighting -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -67,6 +66,9 @@
             $(function() {styleCode();});
         </script>
         
+        <!-- Facebook Open Graph -->
+        <meta property="og:site_name" content="{Title}"/>
+        
         {block:PermalinkPage}
             <meta property="og:url" content="{Permalink}"/>
             <meta property="og:type" content="article"/>
@@ -77,6 +79,7 @@
                         <meta property="og:title" content="{PlaintextTitle}"/>
                     {/block:Title}
                     <meta property="og:description" content="{PlaintextBody}"/>
+                    <meta property="og:image" content="{PortraitURL-128}"/>
                 {/block:Text}
 
                 {block:Photo}
@@ -98,19 +101,19 @@
                 {block:Quote}
                     <meta property="og:title" content="{PlaintextQuote}"/>
                     <meta property="og:description" content="{PlaintextSource}"/>
-                    <meta property="og:image" content="{PortraitURL-64}"/>
+                    <meta property="og:image" content="{PortraitURL-128}"/>
                 {/block:Quote}
 
                 {block:Link}
                     <meta property="og:title" content="{PlaintextName}"/>
                     <meta property="og:description" content="{PlaintextDescription}"/>
-                    <meta property="og:image" content="{PortraitURL-64}"/>
+                    <meta property="og:image" content="{PortraitURL-128}"/>
                 {/block:Link}
 
                 {block:Chat}
                     <meta property="og:title" content="{PlaintextTitle}"/>
                     <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-                    <meta property="og:image" content="{PortraitURL-64}"/>
+                    <meta property="og:image" content="{PortraitURL-128}"/>
                 {/block:Chat}
 
                 {block:Audio}
@@ -130,7 +133,7 @@
                 {block:Answer}
                     <meta property="og:title" content="{PlaintextQuestion}"/>
                     <meta property="og:description" content="{PlaintextAnswer}"/>
-                    <meta property="og:image" content="{PortraitURL-64}"/>
+                    <meta property="og:image" content="{PortraitURL-128}"/>
                 {/block:Answer}
 
             {/block:Posts}
@@ -141,7 +144,7 @@
             <meta property="og:title" content="{Title}"/>
             <meta property="og:type" content="blog"/>
             <meta property="og:description" content="{MetaDescription}"/>
-            <meta property="og:image" content="{PortraitURL-64}"/>
+            <meta property="og:image" content="{PortraitURL-128}"/>
         {/block:IndexPage}
         
         <!-- CSS -->
@@ -152,9 +155,14 @@
                 font-family: "PT Sans", sans-serif;
                 font-weight: 400;
                 -webkit-text-size-adjust: 100%;
-        		-ms-text-size-adjust: 100%;
+            	-ms-text-size-adjust: 100%;
                 -webkit-font-smoothing: antialiased;
                 margin: 0 0 0 0;
+            }
+            img, img a {
+                border-style: none;
+                border: 0px;
+                text-decoration: none;
             }
         
             /* Sidebar */
@@ -294,7 +302,7 @@
                 width: 100%;
                 height: auto;
                 url("{PhotoURL-HighRes}");
-                padding-top: 10px;
+                margin-top: 10px;
             }
             #post .text img a:hover {
                 text-decoration: none;
@@ -317,7 +325,7 @@
                 margin-top: 40px;
             }
             #post .text h2 {
-                font-family: "Socialico";
+                font-family: "socialicoregular";
                 font-size: 60px;
                 color: {color:Navigation Colour};
             }
@@ -361,7 +369,7 @@
             #post .title {
                 font-family: "Oswald", sans-serif;
                 font-size: 24px;
-                padding-top: 20px;
+                margin-top: 20px;
                 font-weight: 400;
                 color: {color:Post Title Colour};
             }
@@ -373,22 +381,22 @@
                 font-family: "Oswald", sans-serif;
                 font-size: 24px;
                 font-weight: 400;
-                padding-top: 20px;
+                margin-top: 20px;
                 color: {color:Post Title Colour};
             }
             #post img {
-                padding-top: 20px;
+                margin-top: 20px;
                 width: 100%;
             }
             #post .photoset {
-                padding-top: 20px;
+                margin-top: 20px;
                 width: 100%;
             }
             #post .video {
                 width: 100%;
             }
             #post .audio {
-                padding-top: 20px;
+                margin-top: 20px;
             }
             #post .audiocaption {
                 font-size: 14px;
@@ -853,7 +861,7 @@
                         <div class="quote">“{Quote}”</div>
                     </a>
                     {block:Source}
-                        <div class="text"><br>{Source}</div>
+                        <div class="text"><p>{Source}</p></div>
                     {/block:Source}
                 </div>            
             {/block:Quote}
