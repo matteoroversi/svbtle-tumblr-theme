@@ -1,33 +1,51 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xml:lang="en" lang="en">
-
-<!-- Svbtle Theme for Tumblr by matteoroversi.com -->
-
+<html prefix="og: http://ogp.me/ns#" lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="imagetoolbar" content="false" />
-    
-        <!-- Title -->
-        <title>
-            {Title} {block:SearchPage}- {lang:Search results for SearchQuery}{/block:SearchPage}{block:PostSummary}- {PostSummary}{/block:PostSummary}{block:IndexPage}- {Description}{/block:IndexPage}
-        </title>
-        
-        <!-- Description -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="HandheldFriendly" content="True"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta http-equiv="cleartype" content="on"/>
+
+        <title>{block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+
         {block:Description}
-        <meta name="description" content="{MetaDescription}" />
+            <meta name="description" content="{MetaDescription}"/>
         {/block:Description}
-        
-        <!-- Fav and touch icons -->
-        <link rel="shortcut icon" href="{Favicon}" />
-        <link rel="apple-touch-icon" href="{PortraitURL-128}" />
-        
+
+        <meta name="author" content="Ahmad Nassri (ahmadnassri.com)"/>
+
+        <meta http-equiv="imagetoolbar" content="false"/>
+        <meta http-equiv="cleartype" content="on"/>
+
+        <link rel="dns-prefetch" href="//ahmadnassri.com"/>
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//ahmadnassri.com/images/icons/144.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//ahmadnassri.com/images/icons/114.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//ahmadnassri.com/images/icons/72.png"/>
+        <link rel="apple-touch-icon-precomposed" href="//ahmadnassri.com/images/icons/57.png"/>
+        <link rel="icon" type="image/png" href="//ahmadnassri.com/images/icons/29.png"/>
+        <link rel="shortcut icon" href="//ahmadnassri.com/images/icons/29.png"/>
+
+        {block:PermalinkPage}
+            {block:Posts}
+                {block:Date}
+                    <link rel="canonical" href="{Permalink}"/>
+                    <link rel="shortlink" href="{ShortURL}"/>
+                {/block:Date}
+            {/block:Posts}
+        {/block:PermalinkPage}
+
+        <link rel="alternate" type="application/rss+xml" title="{lang:RSS}" href="{RSS}"/>
+
         <!-- Custom Fonts -->
-        <link href="http://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css" />
-        <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
-        <link href='http://static.tumblr.com/dbek3sy/VtLmbsu90/socialico.css' rel='stylesheet' type='text/css'>
-        
+        <link href="http://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic" rel="stylesheet" type="text/css"/>
+        <link href='http://static.tumblr.com/dbek3sy/VtLmbsu90/socialico.css' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"/>
+
         <!-- Meta -->
         <meta name="color:Sidebar Colour" content="#ffffff"/>
         <meta name="color:Background Colour" content="#ffffff"/>
@@ -43,33 +61,10 @@
         <meta name="text:Google Analytics ID" content=""/>
         <meta name="text:Disqus Shortname" content=""/>
         <meta name="if:Enable Comment Count" content="1"/>
-        
-        <!-- For Syntax Highlighting -->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>  
-        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>  
-        <script>
-            function styleCode() {
-                if (typeof disableStyleCode != 'undefined') { return; }
-        
-                var a = false;
-                
-                $('code').each(function() {
-                    if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
-                        $(this).addClass('prettyprint');
-                        a = true;
-                    }
-                });
-        
-                if (a) { prettyPrint(); } 
-            }
-    
-            $(function() {styleCode();});
-        </script>
-        
+
         <!-- Facebook Open Graph -->
         <meta property="og:site_name" content="{Title}"/>
-        
+
         {block:PermalinkPage}
             <meta property="og:url" content="{Permalink}"/>
             <meta property="og:type" content="article"/>
@@ -147,10 +142,10 @@
             <meta property="og:description" content="{MetaDescription}"/>
             <meta property="og:image" content="{PortraitURL-128}"/>
         {/block:IndexPage}
-        
+
         <!-- CSS -->
         <style type="text/css">
-        
+
             /* General Settings */
             body {
                 font-family: "PT Sans", sans-serif;
@@ -165,7 +160,7 @@
                 border: 0px;
                 text-decoration: none;
             }
-        
+
             /* Sidebar */
             #sidebar {
                 width: 300px;
@@ -183,8 +178,8 @@
                 background-image: url("{image:Logo 200x200}");
                 background-size: 140px 140px;
                 background-repeat: no-repeat;
-        		background-color:transparent;
-    			background-position:center center;
+                background-color:transparent;
+                background-position:center center;
             }
             #sidebar .logo h1 {
                 text-transform: uppercase;
@@ -206,17 +201,20 @@
                 margin-top: 0px;
                 color: {color:Description Colour};
             }
-            #sidebar .description a, #sidebar .description a:visited {
+            #sidebar .description a,
+            #sidebar .description a:visited {
                 text-decoration: none;
                 font-weight: 600;
                 color: {color:Highlight Colour};
-            }
-            #sidebar .description a:hover {
+
                 -webkit-transition: all 0.5s ease;
                 -moz-transition: all 0.5s ease;
                 -ms-transition: all 0.5s ease;
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
+            }
+
+            #sidebar .description a:hover {
                 color: #fff;
                 background-color: {color:Highlight Colour};
             }
@@ -243,16 +241,17 @@
                 webkit-border-radius: 30px;
                 moz-border-radius: 30px;
                 color: {color:Navigation Colour};
-            }
-            #sidebar .navigation a:hover {
+
                 -webkit-transition: all 0.25s ease;
                 -moz-transition: all 0.25s ease;
                 -ms-transition: all 0.25s ease;
                 -o-transition: all 0.25s ease;
                 transition: all 0.25s ease;
+            }
+            #sidebar .navigation a:hover {
                 color: {color:Highlight Colour};
                 border-color: {color:Highlight Colour};
-            }   
+            }
 
             /* Main Content */
             #main {
@@ -261,7 +260,7 @@
                 border-left: 1px solid #e3e3e3;
                 min-height: 900px;
             }
-            
+
             /* Date */
             #date {
                 padding-top: 40px;
@@ -273,16 +272,17 @@
                 margin-left: 40px;
                 text-decoration: none;
                 color: {color:Date Colour};
-            }
-            #date a:hover {
+
                 -webkit-transition: all 0.25s ease;
                 -moz-transition: all 0.25s ease;
                 -ms-transition: all 0.25s ease;
                 -o-transition: all 0.25s ease;
                 transition: all 0.25s ease;
+            }
+            #date a:hover {
                 color: {color:Highlight Colour};
             }
-            
+
             /* Post */
             #post {
                 margin-left: 40px;
@@ -306,20 +306,21 @@
             }
             #post .text img a:hover {
                 text-decoration: none;
-            }   
+            }
             #post .text a, #post .text a:visited {
                 text-decoration: none;
                 font-weight: bold;
                 color: {color:Highlight Colour};
-            }
-            #post .text a:hover {
+
                 -webkit-transition: all 0.5s ease;
                 -moz-transition: all 0.5s ease;
                 -ms-transition: all 0.5s ease;
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
+            }
+            #post .text a:hover {
                 color: #fff;
-                background-color: {color:Highlight Colour};  
+                background-color: {color:Highlight Colour};
             }
             #post .text h3 {
                 margin-top: 40px;
@@ -333,13 +334,14 @@
                 text-decoration: none;
                 font-weight: normal;
                 color: {color:Navigation Colour};
-            }
-            #post .text h2 a:hover {
+
                 -webkit-transition: all 0.5s ease;
                 -moz-transition: all 0.5s ease;
                 -ms-transition: all 0.5s ease;
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
+            }
+            #post .text h2 a:hover {
                 background-color: #fff;
                 color: {color:Highlight Colour};
             }
@@ -418,7 +420,7 @@
                 width: 100%;
                 height: 100%;
             }
-            
+
             /* Responsive media */
             .embed-container {
                 position: relative;
@@ -435,7 +437,7 @@
                 width: 100%;
                 height: 100%;
             }
-            
+
             /* Social */
             #social {
                 border-top: 1px solid #e3e3e3;
@@ -448,7 +450,7 @@
             .fb-like {
             vertical-align: top;
             }
-            
+
             /* Post Footer */
             #postfooter {
                 border-top: 1px solid #e3e3e3;
@@ -470,17 +472,18 @@
                 webkit-border-radius: 30px;
                 border-color: {color:Highlight Colour};
                 color: {color:Highlight Colour};
-            }
-            #postfooter a:hover {
+
                 -webkit-transition: all 0.25s ease;
                 -moz-transition: all 0.25s ease;
                 -ms-transition: all 0.25s ease;
                 -o-transition: all 0.25s ease;
                 transition: all 0.25s ease;
+            }
+            #postfooter a:hover {
                 border-color: {color:Post Title Colour};
                 color: {color:Post Title Colour};
             }
-            
+
             /* Disqus */
             #disqus_thread {
                 margin-left: 40px;
@@ -488,7 +491,7 @@
                 max-width: 700px;
                 padding-bottom: 50px;
             }
-            
+
             /* Pagination */
             #pagination {
                 border-top: 1px solid #e3e3e3;
@@ -518,145 +521,146 @@
                 webkit-border-radius: 30px;
                 border-color: {color:Highlight Colour};
                 color: {color:Highlight Colour};
-            }
-            #pagination .prev a:hover, #pagination .next a:hover {
+
                 -webkit-transition: all 0.25s ease;
                 -moz-transition: all 0.25s ease;
                 -ms-transition: all 0.25s ease;
                 -o-transition: all 0.25s ease;
                 transition: all 0.25s ease;
+            }
+            #pagination .prev a:hover, #pagination .next a:hover {
                 border-color: {color:Post Title Colour};
                 color: {color:Post Title Colour};
             }
-            
-            
+
+
             /* Start of Media Queries */
-            
+
             /* Desktops and laptops ----------- */
             @media only screen and (min-width: 1224px) {
-            
+
                 #sidebar {
                     width: 400px;
                 }
                 #sidebar .logo .img {
-                	width: 200px;
-                	height: 200px;
-                	margin-left: 50px;
-                	background-size: 200px 200px;
+                    width: 200px;
+                    height: 200px;
+                    margin-left: 50px;
+                    background-size: 200px 200px;
                 }
                 #sidebar .logo h1 {
-                	font-size: 30px;
-                	margin-left: 50px;
+                    font-size: 30px;
+                    margin-left: 50px;
                     margin-right: 40px;
                     margin-bottom: 8px;
                 }
                 #sidebar .description {
-                	font-size: 18px;
-                	line-height: 26px;
-                	margin-left: 50px;
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-left: 50px;
                     margin-right: 40px;
                     margin-top: 0px;
                 }
                 #sidebar .navigation a {
-                	font-size: 18px;
-                	margin-top: 16px;
-                	margin-left: 38px;
+                    font-size: 18px;
+                    margin-top: 16px;
+                    margin-left: 38px;
                     padding: 12px;
                     padding-left: 24px;
                     padding-right: 24px;
                     border: 4px solid;
                     border-color: #efefef;
                 }
-                
+
                 #main {
-                	margin-left: 400px;
+                    margin-left: 400px;
                 }
-                
+
                 #date {
                     padding-top: 50px;
                 }
                 #date a, #date a:visited {
-                	font-size: 16px;
-                	margin-left: 50px;
+                    font-size: 16px;
+                    margin-left: 50px;
                 }
-                
+
                 #post {
-                	margin-left: 50px;
-                	margin-right: 50px;
-                	max-width: 900px;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    max-width: 900px;
                 }
                 #post .text {
-                	font-size: 18px;
-                	line-height: 26px;
+                    font-size: 18px;
+                    line-height: 26px;
                 }
                 #post .title {
-                	font-size: 26px;
+                    font-size: 26px;
                 }
                 #post .quote {
-                	font-size: 26px;
+                    font-size: 26px;
                 }
                 #post .audiocaption {
-                	font-size: 16px;
+                    font-size: 16px;
                 }
-                
+
                 .social_links {
                 margin-left: 50px;
                 }
-                
+
                 #postfooter a, #postfooter a:visited {
-                	margin-left: 50px;
+                    margin-left: 50px;
                 }
-                
+
                 #disqus_thread {
                     margin-left: 50px;
                     margin-right: 50px;
                     max-width: 900px;
                 }
-                
+
                 #pagination .next {
-                	margin-right: 50px;
+                    margin-right: 50px;
                 }
                 #pagination .prev {
-                	margin-left: 50px;
+                    margin-left: 50px;
                 }
-            
+
             }
-            
-            
+
+
             /* Tablet and Smartphones ----------- */
             @media only screen and (max-width: 768px) {
 
                 #sidebar {
                     display: block;
-                	height: auto;
-                	margin: 0;
-                	padding: 0;
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
                     padding-bottom: 40px;
-                	position: relative;
-                	text-align: center;
-                	width: auto;
+                    position: relative;
+                    text-align: center;
+                    width: auto;
                 }
                 #sidebar .logo .img {
-                	margin-left: 0px;
+                    margin-left: 0px;
                     margin: 20px auto;
                 }
                 #sidebar .logo h1 {
-                	margin-left: 6%;
-                	margin-right: 6%;
+                    margin-left: 6%;
+                    margin-right: 6%;
                 }
                 #sidebar .description {
-                	margin-left: 6%;
-                	margin-right: 6%;
+                    margin-left: 6%;
+                    margin-right: 6%;
                 }
                 #sidebar .navigation {
-                	display: inline-block;
+                    display: inline-block;
                     width: 100%;
                 }
                 #sidebar .navigation a {
-                	margin-left: 2px;
+                    margin-left: 2px;
                     margin-right: 2px;
                 }
-                
+
                 #main {
                     margin-left: 0px;
                     margin-right: 0px;
@@ -667,61 +671,61 @@
                 #date a, #date a:visited {
                     margin-left: 6%;
                 }
-                
+
                 #post {
-                	margin-left: 6%;
+                    margin-left: 6%;
                     margin-right: 6%;
                     max-width: 768px;
                 }
-                
+
                 .social_links {
                 margin-left: 6%;
                 }
-                
+
                 #postfooter a, #postfooter a:visited {
-                	margin-left: 6%;
+                    margin-left: 6%;
                 }
-                
+
                 #disqus_thread {
                     margin-left: 6%;
                     margin-right: 6%;
                     max-width: 768px;
                 }
-                
+
                 #pagination .next {
-                	margin-right: 6%;
+                    margin-right: 6%;
                 }
                 #pagination .prev {
-                	margin-left: 6%;
+                    margin-left: 6%;
                 }
             }
-            
+
             /* iPads (landscape) ----------- */
             @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-                
+
                 #sidebar {
                     position: absolute;
                 }
             }
-            
-            /* Retina Dysplays ----------- */ 
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+
+            /* Retina Dysplays ----------- */
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 #sidebar .logo .img {
                     background-image: url("{image:Logo Retina 400x400}");
                 }
             }
-            
+
         </style>
-        
+
         <!-- Custom CSS -->
         <style>
             {CustomCSS}
         </style>
-        
+
     </head>
 
     <body>
-        
+
         <!-- Facebook Script -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -731,10 +735,10 @@
           js.src = "//connect.facebook.net/ca_EN/all.js#xfbml=1";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-    
+
         <!-- Sidebar -->
         <div id="sidebar">
-            
+
             <!-- Logo -->
             <div class="logo">
                 <a href="/" title="{Title}">
@@ -742,14 +746,14 @@
                 </a>
                 <a href="/" title="{Title}">
                     <h1>{Title}</h1>
-			    </a>
+                </a>
             </div>
-            
+
             <!-- Description -->
             <div class="description">
                 {Description}
             </div>
-            
+
             <!-- Navigation -->
             <div class="navigation">
                 {block:HasPages}{block:Pages}<a href="{url}">{Label}</a>{/block:Pages}{/block:HasPages}
@@ -757,31 +761,31 @@
                 {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
             </div>
         </div>
-        
+
         <!-- Main Content -->
         <div id="main">
-        
+
         {block:Posts}
-                
+
             {block:Photo}
                 <div id="date">
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     {LinkOpenTag}
-                        <img src="{PhotoURL-HighRes}" />
+                        <img src="{PhotoURL-HighRes}"/>
                     {LinkCloseTag}
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
             {/block:Photo}
 
             {block:Photoset}
@@ -790,10 +794,10 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <div class="photoset">{Photoset-HighRes}</div>
@@ -809,10 +813,10 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <p></p>
@@ -829,10 +833,10 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <div class="audio">
@@ -842,7 +846,7 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
             {/block:Audio}
 
             {block:Quote}
@@ -851,10 +855,10 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -863,19 +867,19 @@
                     {block:Source}
                         <div class="text"><p>{Source}</p></div>
                     {/block:Source}
-                </div>            
+                </div>
             {/block:Quote}
-                    
+
             {block:Text}
                 <div id="date">
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -886,7 +890,7 @@
                     <div class="text">{Body}</div>
                 </div>
             {/block:Text}
-                    
+
             {block:Answer}
                 <div id="date">
                     <a href="{Permalink}">
@@ -901,17 +905,17 @@
                     <div class="text">{Answer}</div>
                 </div>
             {/block:Answer}
-            
+
             {block:Chat}
                 <div id="date">
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -925,23 +929,23 @@
                             {block:Label}
                                 <strong>{Label}</strong>
                             {/block:Label}
-                            {Line}<br />
+                            {Line}<br/>
                         {/block:Lines}
                         </p>
                     </div>
                 </div>
             {/block:Chat}
-             
+
             {block:Link}
                 <div id="date">
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                        <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
                     <div class="title"><a href="{URL}">{Name}</a></div>
@@ -950,10 +954,10 @@
                     {/block:Description}
                 </div>
             {/block:Link}
-            
+
             <!-- Post Footer -->
             {block:PermalinkPage}
-            
+
             <div id="social">
                 <div class="social_links">
                     <div class="g-plusone" data-size="medium"></div>
@@ -962,7 +966,7 @@
                     <div class="fb-like" data-send="false" data-layout="button_count"></div>
                 </div>
             </div>
-            
+
             <div id="postfooter">
                 {block:IfDisqusShortname}
                     {block:Permalink}
@@ -991,7 +995,7 @@
             {/block:PermalinkPage}
 
         {/block:Posts}
-            
+
         <!-- Pagination -->
         {block:Pagination}
             <div id="pagination">
@@ -999,37 +1003,38 @@
                 {block:NextPage}<div class ="next"><a href="{NextPage}">Older &rarr;</a></div>{/block:NextPage}
             </div>
         {/block:Pagination}
-        
+
         </div>
-        
+
+        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
     </body>
-    
+
     <!-- Disqus -->
     {block:IfDisqusShortname}
     <script>
-		var disqus_shortname = '{text:Disqus Shortname}';
-		(function () {
-			var s = document.createElement('script'); s.async = true;
-			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		}());
-	</script>
-	{/block:IfDisqusShortname}
-    
+        var disqus_shortname = '{text:Disqus Shortname}';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    {/block:IfDisqusShortname}
+
     <!-- Google Analytics -->
     {block:IfGoogleAnalyticsID}
     <script>
         var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	{/block:IfGoogleAnalyticsID}
-    
+        _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    {/block:IfGoogleAnalyticsID}
+
     <script type="text/javascript">
         (function() {
             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -1037,5 +1042,4 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     </script>
-
 </html>
