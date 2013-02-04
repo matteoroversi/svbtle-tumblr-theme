@@ -801,7 +801,11 @@
 					{/block:IfEnableCommentCount}
                 </div>
                 <div id="post">
-                    <div class="photoset">{Photoset-HighRes}</div>
+                    <div class="photoset">
+                        {block:Photos}
+                            <img src="{PhotoURL-HighRes}" class="highres">
+                        {/block:Photos}
+                    </div>
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
@@ -876,11 +880,13 @@
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
-                    {block:IfEnableCommentCount}
+                    	{block:PermalinkPagination}
+                    	{block:IfEnableCommentCount}
         				{block:IfDisqusShortname}
 						<a href="{Permalink}#disqus_thread">0 Comments</a>
 						{/block:IfDisqusShortname}
 					{/block:IfEnableCommentCount}
+			{/block:PermalinkPagination}
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
