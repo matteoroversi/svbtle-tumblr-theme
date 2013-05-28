@@ -912,9 +912,6 @@
             </div>
             <div id="postfooter">
                 {block:IfDisqusShortname}
-                    {block:Permalink}
-                    {block:Posts}
-                    {block:Date}
                     <div id="disqus_thread"></div>
                     <script>
                         (function() {
@@ -929,9 +926,6 @@
                         })();
                     </script>
                     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/">comments powered by Disqus.</a></noscript>
-                    {/block:Date}
-                    {/block:Posts}
-                    {/block:Permalink}
                 {/block:IfDisqusShortname}
                 <a href="/" title="{Title}">&larr; Read More</a>
             </div>
