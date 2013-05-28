@@ -37,24 +37,24 @@
         <meta name="if:Enable Comment Count" content="1" />
         <!-- For Syntax Highlighting -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>  
-        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>  
+        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>
+        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
         <script>
             function styleCode() {
                 if (typeof disableStyleCode != 'undefined') { return; }
-        
+
                 var a = false;
-                
+
                 $('code').each(function() {
                     if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
                         $(this).addClass('prettyprint');
                         a = true;
                     }
                 });
-        
-                if (a) { prettyPrint(); } 
+
+                if (a) { prettyPrint(); }
             }
-    
+
             $(function() {styleCode();});
         </script>
         <!-- Facebook Open Graph -->
@@ -123,7 +123,7 @@
             <meta property="og:type" content="blog"/>
             <meta property="og:description" content="{MetaDescription}"/>
             <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:IndexPage}        
+        {/block:IndexPage}
         <!-- CSS -->
         <style type="text/css">
             /* General Settings */
@@ -277,7 +277,7 @@
             }
             #post .text img a:hover {
                 text-decoration: none;
-            }   
+            }
             #post .text a, #post .text a:visited {
                 text-decoration: none;
                 font-weight: bold;
@@ -290,7 +290,7 @@
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
                 color: #fff;
-                background-color: {color:Highlight Colour};  
+                background-color: {color:Highlight Colour};
             }
             #post .text h3 {
                 margin-top: 40px;
@@ -560,7 +560,7 @@
                 .social_links {
                 margin-left: 50px;
                 }
-                
+
                 #postfooter a, #postfooter a:visited {
                 	margin-left: 50px;
                 }
@@ -646,8 +646,8 @@
                     position: absolute;
                 }
             }
-            /* Retina Displays ----------- */ 
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+            /* Retina Displays ----------- */
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 #sidebar .logo .img {
                     background-image: url("{image:Logo Retina 400x400}");
                 }
@@ -662,7 +662,7 @@
             {CustomCSS}
         </style>
     </head>
-    <body>        
+    <body>
         <!-- Facebook Script -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -699,7 +699,7 @@
         ---------------------------------->
         <div id="main">
         {block:Posts}
-            <!-- Photo -->   
+            <!-- Photo -->
             {block:Photo}
                 <div id="date">
                     <a href="{Permalink}">
@@ -718,7 +718,7 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
             {/block:Photo}
             <!-- Photoset -->
             {block:Photoset}
@@ -783,7 +783,7 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
             {/block:Audio}
             <!-- Quote -->
             {block:Quote}
@@ -804,7 +804,7 @@
                     {block:Source}
                         <div class="text"><p>{Source}</p></div>
                     {/block:Source}
-                </div>            
+                </div>
             {/block:Quote}
             <!-- Text -->
             {block:Text}
