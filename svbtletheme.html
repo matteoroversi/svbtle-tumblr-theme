@@ -37,24 +37,24 @@
         <meta name="if:Enable Comment Count" content="1" />
         <!-- For Syntax Highlighting -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>  
-        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>  
+        <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>
+        <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
         <script>
             function styleCode() {
                 if (typeof disableStyleCode != 'undefined') { return; }
-        
+
                 var a = false;
-                
+
                 $('code').each(function() {
                     if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
                         $(this).addClass('prettyprint');
                         a = true;
                     }
                 });
-        
-                if (a) { prettyPrint(); } 
+
+                if (a) { prettyPrint(); }
             }
-    
+
             $(function() {styleCode();});
         </script>
         <!-- Facebook Open Graph -->
@@ -123,7 +123,7 @@
             <meta property="og:type" content="blog"/>
             <meta property="og:description" content="{MetaDescription}"/>
             <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:IndexPage}        
+        {/block:IndexPage}
         <!-- CSS -->
         <style type="text/css">
             /* General Settings */
@@ -157,8 +157,8 @@
                 background-image: url("{image:Logo 200x200}");
                 background-size: 140px 140px;
                 background-repeat: no-repeat;
-        		background-color:transparent;
-    			background-position:center center;
+        		    background-color:transparent;
+    			      background-position:center center;
             }
             #sidebar .logo h1 {
                 text-transform: uppercase;
@@ -277,7 +277,7 @@
             }
             #post .text img a:hover {
                 text-decoration: none;
-            }   
+            }
             #post .text a, #post .text a:visited {
                 text-decoration: none;
                 font-weight: bold;
@@ -290,7 +290,7 @@
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
                 color: #fff;
-                background-color: {color:Highlight Colour};  
+                background-color: {color:Highlight Colour};
             }
             #post .text h3 {
                 margin-top: 40px;
@@ -560,7 +560,7 @@
                 .social_links {
                 margin-left: 50px;
                 }
-                
+
                 #postfooter a, #postfooter a:visited {
                 	margin-left: 50px;
                 }
@@ -646,8 +646,8 @@
                     position: absolute;
                 }
             }
-            /* Retina Displays ----------- */ 
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+            /* Retina Displays ----------- */
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 #sidebar .logo .img {
                     background-image: url("{image:Logo Retina 400x400}");
                 }
@@ -660,9 +660,27 @@
         <!-- Custom CSS -->
         <style>
             {CustomCSS}
+
+            <!-- Tag row CSS; remove and swap with Custom CSS if applicable -->
+            div.alltags {
+              background: #efefef;
+              font: small-caps 0.8em/100% "PT Sans",sans-serif;
+              border-radius: 30px 0 0 30px;
+              margin: -1.5em 0 1.5em 40%;
+              padding: .6em 1em;
+            }
+            div.alltags a {
+              color: {color:Navigation Colour};
+              font-size: 1em;
+              padding: 0 .25em;
+            }
+            div.alltags a:hover {
+              color: {color:Text Colour};
+            }
+            <!-- End of tag row CSS -->
         </style>
     </head>
-    <body>        
+    <body>
         <!-- Facebook Script -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -699,7 +717,7 @@
         ---------------------------------->
         <div id="main">
         {block:Posts}
-            <!-- Photo -->   
+            <!-- Photo -->
             {block:Photo}
                 <div id="date">
                     <a href="{Permalink}">
@@ -718,7 +736,13 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Photo}
             <!-- Photoset -->
             {block:Photoset}
@@ -742,6 +766,12 @@
                         <div class="text">{Caption}</div>
                     {/block:Caption}
                 </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Photoset}
             <!-- Video -->
             {block:Video}
@@ -761,6 +791,12 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
                 </div>
             {/block:Video}
             <!-- Audio -->
@@ -783,7 +819,13 @@
                     {block:Caption}
                         <div class="text">{Caption}</div>
                     {/block:Caption}
-                </div>    
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Audio}
             <!-- Quote -->
             {block:Quote}
@@ -804,7 +846,13 @@
                     {block:Source}
                         <div class="text"><p>{Source}</p></div>
                     {/block:Source}
-                </div>            
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Quote}
             <!-- Text -->
             {block:Text}
@@ -835,6 +883,12 @@
                     </a>
                     <div class="text">{Body}</div>
                 </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Text}
             <!-- Answer -->
             {block:Answer}
@@ -849,6 +903,12 @@
                     </a>
                     <div class="text">{Asker}</div>
                     <div class="text">{Answer}</div>
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
                 </div>
             {/block:Answer}
             <!-- Chat -->
@@ -880,6 +940,12 @@
                         </p>
                     </div>
                 </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
+                </div>
             {/block:Chat}
             <!-- Link -->
             {block:Link}
@@ -898,6 +964,12 @@
                     {block:Description}
                         <div class="text">{Description}</div>
                     {/block:Description}
+                </div>
+                <div class="alltags">
+                    {block:HasTags}
+                      Tagged under
+                      {block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+                    {/block:HasTags}
                 </div>
             {/block:Link}
             <!-- Post Footer -->
