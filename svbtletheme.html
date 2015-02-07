@@ -42,19 +42,15 @@
         <script>
             function styleCode() {
                 if (typeof disableStyleCode != 'undefined') { return; }
-
                 var a = false;
-
                 $('code').each(function() {
                     if (!$(this).hasClass('prettyprint') && !$(this).hasClass('uglyprint')) {
                         $(this).addClass('prettyprint');
                         a = true;
                     }
                 });
-
                 if (a) { prettyPrint(); }
             }
-
             $(function() {styleCode();});
         </script>
         <!-- Facebook Open Graph -->
@@ -131,7 +127,7 @@
                 font-family: "PT Sans", sans-serif;
                 font-weight: 400;
                 -webkit-text-size-adjust: 100%;
-            	-ms-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
                 -webkit-font-smoothing: antialiased;
                 margin: 0 0 0 0;
             }
@@ -157,8 +153,8 @@
                 background-image: url("{image:Logo 200x200}");
                 background-size: 140px 140px;
                 background-repeat: no-repeat;
-        		    background-color:transparent;
-    			      background-position:center center;
+                background-color:transparent;
+                background-position:center center;
             }
             #sidebar .logo h1 {
                 text-transform: uppercase;
@@ -501,28 +497,28 @@
                     width: 400px;
                 }
                 #sidebar .logo .img {
-                	width: 200px;
-                	height: 200px;
-                	margin-left: 50px;
-                	background-size: 200px 200px;
+                  width: 200px;
+                  height: 200px;
+                  margin-left: 50px;
+                  background-size: 200px 200px;
                 }
                 #sidebar .logo h1 {
-                	font-size: 30px;
-                	margin-left: 50px;
+                  font-size: 30px;
+                  margin-left: 50px;
                     margin-right: 40px;
                     margin-bottom: 8px;
                 }
                 #sidebar .description {
-                	font-size: 18px;
-                	line-height: 26px;
-                	margin-left: 50px;
+                  font-size: 18px;
+                  line-height: 26px;
+                  margin-left: 50px;
                     margin-right: 40px;
                     margin-top: 0px;
                 }
                 #sidebar .navigation a {
-                	font-size: 18px;
-                	margin-top: 16px;
-                	margin-left: 38px;
+                  font-size: 18px;
+                  margin-top: 16px;
+                  margin-left: 38px;
                     padding: 12px;
                     padding-left: 24px;
                     padding-right: 24px;
@@ -530,39 +526,39 @@
                     border-color: #efefef;
                 }
                 #main {
-                	margin-left: 400px;
+                  margin-left: 400px;
                 }
                 #date {
                     padding-top: 50px;
                 }
                 #date a, #date a:visited {
-                	font-size: 16px;
-                	margin-left: 50px;
+                  font-size: 16px;
+                  margin-left: 50px;
                 }
                 #post {
-                	margin-left: 50px;
-                	margin-right: 50px;
-                	max-width: 900px;
+                  margin-left: 50px;
+                  margin-right: 50px;
+                  max-width: 900px;
                 }
                 #post .text {
-                	font-size: 18px;
-                	line-height: 26px;
+                  font-size: 18px;
+                  line-height: 26px;
                 }
                 #post .title {
-                	font-size: 26px;
+                  font-size: 26px;
                 }
                 #post .quote {
-                	font-size: 26px;
+                  font-size: 26px;
                 }
                 #post .audiocaption {
-                	font-size: 16px;
+                  font-size: 16px;
                 }
                 .social_links {
                 margin-left: 50px;
                 }
 
                 #postfooter a, #postfooter a:visited {
-                	margin-left: 50px;
+                  margin-left: 50px;
                 }
                 #disqus_thread {
                     margin-left: 50px;
@@ -570,42 +566,42 @@
                     max-width: 900px;
                 }
                 #pagination .next {
-                	margin-right: 50px;
+                  margin-right: 50px;
                 }
                 #pagination .prev {
-                	margin-left: 50px;
+                  margin-left: 50px;
                 }
             }
             /* Tablets (Portrait) ----------- */
             @media only screen and (max-width: 800px) {
                 #sidebar {
                     display: block;
-                	height: auto;
-                	margin: 0;
-                	padding: 0;
+                  height: auto;
+                  margin: 0;
+                  padding: 0;
                     padding-bottom: 40px;
-                	position: relative;
-                	text-align: center;
-                	width: auto;
+                  position: relative;
+                  text-align: center;
+                  width: auto;
                 }
                 #sidebar .logo .img {
-                	margin-left: 0px;
+                  margin-left: 0px;
                     margin: 20px auto;
                 }
                 #sidebar .logo h1 {
-                	margin-left: 6%;
-                	margin-right: 6%;
+                  margin-left: 6%;
+                  margin-right: 6%;
                 }
                 #sidebar .description {
-                	margin-left: 6%;
-                	margin-right: 6%;
+                  margin-left: 6%;
+                  margin-right: 6%;
                 }
                 #sidebar .navigation {
-                	display: inline-block;
+                  display: inline-block;
                     width: 100%;
                 }
                 #sidebar .navigation a {
-                	margin-left: 2px;
+                  margin-left: 2px;
                     margin-right: 2px;
                 }
                 #main {
@@ -618,7 +614,7 @@
                     margin-left: 6%;
                 }
                 #post {
-                	margin-left: 6%;
+                  margin-left: 6%;
                     margin-right: 6%;
                     max-width: 768px;
                 }
@@ -626,7 +622,7 @@
                 margin-left: 6%;
                 }
                 #postfooter a, #postfooter a:visited {
-                	margin-left: 6%;
+                  margin-left: 6%;
                 }
                 #disqus_thread {
                     margin-left: 6%;
@@ -634,10 +630,10 @@
                     max-width: 768px;
                 }
                 #pagination .next {
-                	margin-right: 6%;
+                  margin-right: 6%;
                 }
                 #pagination .prev {
-                	margin-left: 6%;
+                  margin-left: 6%;
                 }
             }
             /* Tablets (Landscape) ----------- */
@@ -678,6 +674,32 @@
               color: {color:Text Colour};
             }
             <!-- End of tag row CSS -->
+            <!-- Like button CSS; remove and swap with Custom CSS if applicable -->
+            #date span.likeme {
+              float: right;
+              width: 3%;
+              background: #eaeaea;
+              border-radius: 15px 0 0 15px;
+              padding: .3em .5em 0 .8em;
+              opacity: .7;
+            }
+            #date span.likeme:hover {
+              opacity: 1;
+            }
+            #date .like_button {
+               text-align: center;
+            }
+            <!-- End of Like button CSS -->
+            <!-- Thumb up/Notes CSS; remove and swap with Custom CSS if applicable -->
+            #date span.yesnote {
+              background: #eaeaea;
+               color: #aaa;
+              font: small-caps 0.8em/100% 'Oxygen',sans-serif;
+              border-radius: 30px;
+              margin-left: 1em;
+              padding: 1px 10px;
+            }
+            <!-- End of Thumb up/Notes CSS -->
         </style>
     </head>
     <body>
@@ -700,7 +722,7 @@
                 </a>
                 <a href="/" title="{Title}">
                     <h1>{Title}</h1>
-			    </a>
+          </a>
             </div>
             <!-- Description -->
             <div class="description">
@@ -724,10 +746,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     {LinkOpenTag}
@@ -751,10 +777,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <div class="photoset">
@@ -780,10 +810,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <p></p>
@@ -806,10 +840,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <div class="audio">
@@ -834,10 +872,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -862,18 +904,22 @@
                     </a>
                     {block:IndexPage}
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
                     {/block:IndexPage}
                     {block:PermalinkPagination}
-                    {block:IfEnableCommentCount}
-            			{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                      {block:IfEnableCommentCount}
+                         {block:IfDisqusShortname}
+                               <a href="{Permalink}#disqus_thread">0 Comments</a>
+                         {/block:IfDisqusShortname}
+                      {/block:IfEnableCommentCount}
                     {/block:PermalinkPagination}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -896,6 +942,10 @@
                     <a href="{Permalink}">
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -918,10 +968,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <a href="{Permalink}">
@@ -954,10 +1008,14 @@
                         {block:Date}{DayOfMonth} {Month} {Year}{/block:Date}
                     </a>
                     {block:IfEnableCommentCount}
-        				{block:IfDisqusShortname}
-						<a href="{Permalink}#disqus_thread">0 Comments</a>
-						{/block:IfDisqusShortname}
-					{/block:IfEnableCommentCount}
+                        {block:IfDisqusShortname}
+                              <a href="{Permalink}#disqus_thread">0 Comments</a>
+                        {/block:IfDisqusShortname}
+                    {/block:IfEnableCommentCount}
+                    {block:NoteCount}
+                        <span class="yesnote">{NoteCount} &#128077;</span>
+                    {/block:NoteCount}
+                    <span class="likeme">{LikeButton size="18"}</span>
                 </div>
                 <div id="post">
                     <div class="title"><a href="{URL}">{Name}</a></div>
@@ -1021,27 +1079,27 @@
     <!-- Disqus -->
     {block:IfDisqusShortname}
     <script>
-		var disqus_shortname = '{text:Disqus Shortname}';
-		(function () {
-			var s = document.createElement('script'); s.async = true;
-			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		}());
-	</script>
-	{/block:IfDisqusShortname}
+    var disqus_shortname = '{text:Disqus Shortname}';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+  {/block:IfDisqusShortname}
     <!-- Google Analytics -->
     {block:IfGoogleAnalyticsID}
     <script>
         var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	{/block:IfGoogleAnalyticsID}
+    _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  {/block:IfGoogleAnalyticsID}
     <!-- Google Plusone -->
     <script type="text/javascript">
         (function() {
