@@ -7,7 +7,6 @@ You can see a preview here: http://svbtletheme.tumblr.com</p>
 <li>Full documentation here: http://svbtletheme.tumblr.com/documentation</li>
 <li>Gallery of featured blogs here: http://svbtletheme.tumblr.com/tagged/gallery</li>
 </ul>
-<a href="http://svbtletheme.tumblr.com"><img src="https://dl.dropbox.com/u/2930775/matteoroversi.com/img/12.12.21_svbtle_theme.jpg"></a>
 
 <h2>What’s new in version 1.1 (15/01/2013)</h2>
 <ul>
